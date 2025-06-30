@@ -1,0 +1,17 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Node
+client/node_modules/
+.next/
+*.log
+
+# MacOS system file
+.DS_Store
+
+# App-specific generated data
+backend/frames/
+backend/uploads/
+backend/predictions.json

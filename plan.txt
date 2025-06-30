@@ -1,0 +1,14 @@
+Phase 4: Frame Classification (Start Now)
+We'll now:
+
+Load the google/vit-base-patch16-224 model from Hugging Face.
+
+Use it to classify each image in the /frames directory.
+
+Store or return the predicted labels for each frame.
+
+Set up a simple /classify backend route to run classification.
+
+Optionally, display those labels on the frontend per frame.
+
+done: installed google model hugging Face(google/vit-base-patch16-224)
