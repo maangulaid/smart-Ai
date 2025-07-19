@@ -7,3 +7,6 @@ numpy
 torch
 transformers
 opencv-python
+python-dotenv
+scikit-learn
+scipy   
