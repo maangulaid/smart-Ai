@@ -1,6 +1,8 @@
 from fastapi import FastAPI, File, UploadFile, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from utils.scrape_california_cameras import get_california_camera_snapshots
+
 import os
 import uuid
 import shutil
@@ -120,3 +122,11 @@ def zip_to_coords(zip_code: str):
     if coords:
         return {"lat": coords[0], "lng": coords[1]}
     return {"error": "Unable to geocode ZIP code"}
+
+@app.get("/scrape/ca-cameras")
+def scrape_california_cameras():
+    try:
+        urls = get_california_camera_snapshots()
+        return {"count": len(urls), "snapshots": urls}
+    except Exception as e:
+        return {"error": str(e)}
