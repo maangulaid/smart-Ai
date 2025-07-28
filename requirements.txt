@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+requests
+pillow
+numpy
+torch
+transformers
+opencv-python
+python-dotenv
+scikit-learn
+scipy   
