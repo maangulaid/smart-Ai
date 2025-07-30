@@ -46,7 +46,7 @@ Backend:
 - Custom ZIP code dataset for geolocation
 
 
-# set up (foer windows)
+# set up (for windows)
 backend set up:
 
 -cd backend
@@ -86,7 +86,8 @@ google/vit-base-patch16-224
 
 Easily extendable to object detection and action recognition models from Hugging Face
 
-#Use Cases:
+
+# Use Cases:
 Public safety and crime detection
 
 Emergency response and hazard alerts
