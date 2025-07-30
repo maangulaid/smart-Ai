@@ -47,3 +47,66 @@ Backend:
 
 ## Project Structure
 
+client/ # Frontend (Next.js)
+│ ├── pages/
+│ ├── app/
+│ ├── components/
+│ └── public/
+├── backend/ # Backend (FastAPI)
+│ ├── routes/
+│ ├── utils/
+│ ├── classifiers/
+│ └── main.py
+├── dataset/ # ZIP code and camera location data
+├── frames/ # Extracted frames from video
+└── README.md
+
+2-backend set up
+
+cd backend
+python -m venv venv
+venv\Scripts\activate        # On Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+ Frontend Setup
+ cd client
+npm install
+npm run dev
+
+
+
+How It Works
+Video Upload
+User uploads a video
+
+Backend extracts frames using OpenCV
+
+Each frame is classified using a Hugging Face model
+
+Predictions are displayed alongside each frame in the UI
+
+ZIP Code Search
+User enters a ZIP code or address
+
+Backend finds relevant coordinates
+
+Scrapes public DOT camera images
+
+Runs classification on the images
+
+Returns a summary of detected issues by road or area
+
+Model Used
+google/vit-base-patch16-224
+
+Easily extendable to object detection and action recognition models from Hugging Face
+
+Use Cases
+Public safety and crime detection
+
+Emergency response and hazard alerts
+
+Urban analytics and traffic reporting
+
+Smart city surveillance applications
