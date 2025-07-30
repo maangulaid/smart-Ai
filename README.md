@@ -45,53 +45,37 @@ Backend:
 - Hugging Face Transformers and PyTorch for classification
 - Custom ZIP code dataset for geolocation
 
-## Project Structure
 
-client/ # Frontend (Next.js)
-│ ├── pages/
-│ ├── app/
-│ ├── components/
-│ └── public/
-├── backend/ # Backend (FastAPI)
-│ ├── routes/
-│ ├── utils/
-│ ├── classifiers/
-│ └── main.py
-├── dataset/ # ZIP code and camera location data
-├── frames/ # Extracted frames from video
-└── README.md
+# set up (foer windows)
+backend set up:
 
-2-backend set up
+-cd backend
+-python -m venv venv
+-venv\Scripts\activate       
+-pip install -r requirements.txt
+-uvicorn main:app --reload
 
-cd backend
-python -m venv venv
-venv\Scripts\activate        # On Windows
-pip install -r requirements.txt
-uvicorn main:app --reload
-
- Frontend Setup
- cd client
-npm install
-npm run dev
+Frontend Setup:
+-cd client
+-npm install
+-npm run dev
 
 
 
-How It Works
-Video Upload
-User uploads a video
+#How It Works
 
-Backend extracts frames using OpenCV
+1-Video Upload
 
-Each frame is classified using a Hugging Face model
+2-User uploads a video
 
-Predictions are displayed alongside each frame in the UI
+3-Backend extracts frames using OpenCV
 
-ZIP Code Search
-User enters a ZIP code or address
+4-Each frame is classified using a Hugging Face model
 
-Backend finds relevant coordinates
+5-Predictions are displayed alongside each frame in the UI
 
-Scrapes public DOT camera images
+it also has ZIP Code Search
+--User enters a ZIP code or address
 
 Runs classification on the images
 
@@ -102,7 +86,7 @@ google/vit-base-patch16-224
 
 Easily extendable to object detection and action recognition models from Hugging Face
 
-Use Cases
+#Use Cases:
 Public safety and crime detection
 
 Emergency response and hazard alerts
